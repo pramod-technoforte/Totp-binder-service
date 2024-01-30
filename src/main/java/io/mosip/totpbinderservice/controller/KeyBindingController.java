@@ -2,16 +2,15 @@ package io.mosip.totpbinderservice.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import io.mosip.totpbinderservice.dto.AccessTokenResponse;
 import io.mosip.totpbinderservice.dto.KeyBindRequestDTO;
 import io.mosip.totpbinderservice.dto.KeyBindResponseDTO;
 import io.mosip.totpbinderservice.dto.RequestWrapper;
 import io.mosip.totpbinderservice.dto.ResponseWrapper;
+import io.swagger.v3.oas.annotations.Operation;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.*;
-import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
@@ -22,11 +21,9 @@ import org.springframework.web.client.HttpServerErrorException;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
 import java.time.format.DateTimeFormatter;
-import java.util.Map;
 
 @RestController
 @RequestMapping("/binding")
@@ -42,6 +39,7 @@ public class KeyBindingController {
     private String bindingEndpoint;
 
     @PostMapping("/totp-key-bind")
+    @Operation(summary = "totp key binding", description = "totp key binding")
     public KeyBindResponseDTO bindKey (@RequestBody KeyBindRequestDTO bindRequestDTO, @RequestHeader("Authorization") String bearerToken) {
 
         HttpHeaders headers = new HttpHeaders();

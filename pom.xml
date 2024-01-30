@@ -15,6 +15,7 @@
 	<description>Backend Application for TOTP binding</description>
 	<properties>
 		<java.version>11</java.version>
+		<springdoc.version>1.5.10</springdoc.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -43,15 +44,20 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-ui</artifactId>
+			<version>1.5.10</version>
+		</dependency>
+		<dependency>
 			<groupId>com.nimbusds</groupId>
 			<artifactId>nimbus-jose-jwt</artifactId>
 			<version>9.10</version> <!-- Use the latest version available -->
 		</dependency>
-		<dependency>
+		<!--<dependency>
 			<groupId>io.springfox</groupId>
 			<artifactId>springfox-boot-starter</artifactId>
-			<version>3.0.0</version> <!-- Use the latest version available -->
-		</dependency>
+			<version>3.0.0</version> 
+		</dependency>-->
 		<dependency>
 			<groupId>org.hibernate.validator</groupId>
 			<artifactId>hibernate-validator</artifactId>
