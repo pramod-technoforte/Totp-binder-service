@@ -1,4 +1,5 @@
 package io.mosip.totpbinderservice.config;
+
 import java.util.List;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;

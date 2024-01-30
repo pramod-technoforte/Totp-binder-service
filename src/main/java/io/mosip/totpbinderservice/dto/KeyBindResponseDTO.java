@@ -1,7 +1,5 @@
 package io.mosip.totpbinderservice.dto;
 
-import java.util.List;
-
 public class KeyBindResponseDTO {
     private String status;
 

@@ -9,7 +9,6 @@ import io.mosip.totpbinderservice.helper.Constants;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.core.env.Environment;
 import org.springframework.http.*;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.util.LinkedMultiValueMap;
@@ -41,9 +40,6 @@ public class OAuthController {
     @Autowired(required = false)
     @Qualifier("selfTokenRestTemplate")
     private RestTemplate selfTokenRestTemplate;
-
-    @Autowired
-    private Environment environment;
 
     @Value("${mosip.iam.module.grant_type}")
     private String grantType;
